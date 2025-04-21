@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: #0d0d0d;
+  color: #f1c40f;
+  line-height: 1.6;
+}
+header {
+  text-align: center;
+  padding: 2rem;
+  background: #000;
+}
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+header p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  position: relative;
+}
+h2::after {
+  content: "";
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, #f1c40f, #000);
+  display: block;
+  margin: 0.5rem auto 2rem;
+  animation: underline-glow 2s infinite alternate;
+}
+@keyframes underline-glow {
+  from { width: 30%; }
+  to   { width: 70%; }
+}
+
+.filters {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.filter-btn {
+  font-family: 'Orbitron', sans-serif;
+  background: transparent;
+  border: 2px solid #f1c40f;
+  color: #f1c40f;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  text-transform: uppercase;
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background: #f1c40f;
+  color: #0d0d0d;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: linear-gradient(145deg, #1a1a1a, #000);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.project-card h3 a {
+  color: #f1c40f;
+  text-decoration: none;
+}
+.project-card p {
+  font-size: 1rem;
+  color: #ccc;
+}
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px 5px rgba(241,196,15,0.7);
+}
+
+.contact {
+  text-align: center;
+  margin-top: 3rem;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.contact input,
+.contact textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.8rem;
+  border: 1px solid #f1c40f55;
+  border-radius: 4px;
+  background: #262626;
+  color: #f1c40f;
+}
+.contact button {
+  background: linear-gradient(90deg, #f1c40f, #f39c12);
+  color: #0d0d0d;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.contact button:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #777;
+  background: #000;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# environnement
+.env
+.env.local
+.env.*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# build output (si tu en as un dossier /dist ou /build)
+dist/
+build/
+
+# fichiers OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Alexandre Ziba</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Alexandre Ziba – Développeur Web Freelance</h1>
+    <p>Spécialisé en Laravel & React</p>
+  </header>
+
+  <section>
+    <h2>Mes Projets</h2>
+
+    <div class="filters">
+      <button class="filter-btn active" data-category="all">Tous</button>
+      <button class="filter-btn" data-category="backend">Back‑end</button>
+      <button class="filter-btn" data-category="frontend">Front‑end</button>
+      <button class="filter-btn" data-category="optimisation">Optimisation</button>
+    </div>
+    <div class="project-card" data-category="backend">
+      <h3>
+        <a href="https://github.com/tonpseudo/plateforme-reservation" target="_blank">
+          Plateforme de Réservation Laravel
+        </a>
+      </h3>
+      <p>
+        Application Laravel complète de réservation de services : 
+        authentification, gestion des utilisateurs et rôles, création 
+        et suivi des réservations, dashboard administrateur et API REST.
+      </p>
+    </div>
+    
+      <div class="project-card" data-category="backend">
+        <h3><a href="https://github.com/AlexandreLemath/Projet6">Site backend de livre<br>Node.js · MongoDB · Express</a></h3>
+        <p>API REST pour gérer une bibliothèque en ligne : création, mise à jour, suppression et recherche de livres, avec authentification des utilisateurs et permissions.</p>
+      </div>
+
+      <div class="project-card" data-category="frontend">
+        <h3><a href="https://github.com/AlexandreLemath/Projet-3">Sophie Bluel</a></h3>
+        <p>Portfolio pour une architecte d’intérieur : interface d’administration en JavaScript Vanilla et animations de navigation légères.</p>
+      </div>
+
+      <div class="project-card" data-category="frontend">
+        <h3><a href="https://github.com/AlexandreLemath/kasa">Kasa</a></h3>
+        <p>Application React pour la location d’appartements : filtres dynamiques, système de notation et galerie d’images responsive.</p>
+      </div>
+
+      <div class="project-card" data-category="frontend">
+        <h3><a href="https://github.com/AlexandreLemath/https---github.com-AlexandreLemath-booki">Booki</a></h3>
+        <p>Intégration HTML/CSS d’une maquette de site de réservation : design mobile‑first, grille responsive et transitions CSS.</p>
+      </div>
+
+      <div class="project-card" data-category="optimisation">
+        <h3><a href="https://github.com/AlexandreLemath/Nina-Carducci-Dev-master">Nina Carducci (SEO)</a></h3>
+        <p>Audit SEO complet : optimisation des balises méta, structuration des URLs et tests Lighthouse pour améliorer le référencement naturel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Me contacter</h2>
+    <form id="contactForm">
+      <input name="name" type="text" placeholder="Nom" required />
+      <input name="email" type="email" placeholder="Email" required />
+      <textarea name="message" rows="5" placeholder="Votre message"></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>© 2025 Alexandre Ziba</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.project-card');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const cat = btn.dataset.category;
+          cards.forEach(card => {
+            card.style.display = (cat === 'all' || card.dataset.category === cat)
+              ? 'block' : 'none';
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
